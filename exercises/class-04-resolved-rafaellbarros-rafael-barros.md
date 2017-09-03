@@ -47,7 +47,7 @@ WriteResult({
 
 ```
 
-## 2. **Adicionar** 1 movimento em todos os pokemons: `desvio`.##
+## 2. **Adicionar** 1 movimento em todos os pokemons: `desvio`.
 
 ```
 DEV(mongod-3.4.6) be-mean-pokemons> var query = {}
@@ -63,7 +63,7 @@ WriteResult({
 
 ```
 
-## 3. **Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações".##
+## 3. **Adicionar** o pokemon `AindaNaoExisteMon` caso ele não exista com todos os dados com o valor `null` e a descrição: "Sem maiores informações".
 
 ```
 DEV(mongod-3.4.6) be-mean-pokemons> var query = {name: /AindaNaoExisteMon/i}
@@ -79,7 +79,7 @@ WriteResult({
 })
 ```
 
-## 4. Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.##
+## 4. Pesquisar todos o pokemons que possuam o ataque `investida` e mais um que você adicionou, escolha seu pokemon favorito.
 
 ```
 DEV(mongod-3.4.6) be-mean-pokemons> var query = { moves: { $in: [/descarga/i, /bolhas/i] }}
@@ -113,7 +113,7 @@ DEV(mongod-3.4.6) be-mean-pokemons> db.pokemons.find(query)
 Fetched 2 record(s) in 9ms
 ```
 
-## 5. Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.##
+## 5. Pesquisar **todos** os pokemons que possuam os ataques que você adicionou, escolha seu pokemon favorito.
 
 ```
 DEV(mongod-3.4.6) be-mean-pokemons> var query = {moves: { $all: [/folhas navalhas/i, /planta mortal/i] }}
@@ -135,7 +135,7 @@ Fetched 1 record(s) in 5ms
 
 ```
 
-## 6. Pesquisar **todos** os pokemons que não são do tipo `elétrico`.##
+## 6. Pesquisar **todos** os pokemons que não são do tipo `elétrico`.
 
 ```
 DEV(mongod-3.4.6) be-mean-pokemons> var query = {type: {$not: /elétrico/i}}
@@ -202,7 +202,7 @@ DEV(mongod-3.4.6) be-mean-pokemons> db.pokemons.find(query)
 Fetched 5 record(s) in 20ms
 ```
 
-## 7. Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.##
+## 7. Pesquisar **todos** os pokemons que tenham o ataque `investida` **E** tenham a defesa **não menor ou igual** a 49.
 
 ```
 DEV(mongod-3.4.6) be-mean-pokemons> var query = {$and: [ {moves: {$in: ['investida']}}, {attack: {$not: {$lte: 49}}} ]}
